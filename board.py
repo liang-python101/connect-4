@@ -12,8 +12,16 @@ class board:
         empty_space = '   '
         base = '╔╩╗                         ╔╩╗'
         #go through board and print correct things, if not empty space print player piece
+        for x in range(0, 6):
+            print(horizontal)
+            print(vertical)
+            for y in range(0, 7):
+                print(empty_space); print(vertical)
         if showbase == True:
+            print(horizontal)
             print(base)
+        else:
+            print(horizontal)
 
     def InsertPiece(self, plr:int=1, col:int=0):
         success = False
