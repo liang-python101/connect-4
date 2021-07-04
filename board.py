@@ -5,6 +5,7 @@ class board:
         self.plr1p = plr1p
         self.plr2p = plr2p
         self.matrix = np.zeros((6,7))
+        self.num_rows, self.num_cols = self.matrix.shape
 
     def PrintBoard(self, showbase:bool=True):
         horizontal = ' ═════════════════════════════'
@@ -12,7 +13,8 @@ class board:
         empty_space = '   '
         base = '╔╩╗                         ╔╩╗'
         #go through board and print correct things, if not empty space print player piece
-        num_rows, num_cols = self.matrix.shape
+        num_rows = self.num_rows
+        num_cols = self.num_cols
         for row in range(0,num_rows):
             newline = ' ' + vertical
             for col in range(0,num_cols):
@@ -28,17 +30,20 @@ class board:
             print(newline)
         print(horizontal)
         if showbase == True:
-            print(horizontal)
             print(base)
-        else:
-            print(horizontal)
 
     def InsertPiece(self, plr:int=1, col:int=0):
         success = False
+        num_rows = self.num_rows
+        num_cols = self.num_cols
         #check to make sure the selected column isn't filled
-        row = 0
+        for row in range(num_rows-1, -1, -1):
+            loc_status = self.matrix[row][col]
+            if loc_status == 0:
+                self.matrix[row][col] = plr
+                success = True
+                break
         #go through rows until there is an empty space
-        self.matrix[row][col] = plr
         return success
 
     

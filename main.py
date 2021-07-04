@@ -19,4 +19,12 @@ print("╔╩╗                         ╔╩╗")
 """
 
 newboard = board()
+newboard.InsertPiece(2, 1)
+newboard.InsertPiece(2, 1)
+newboard.InsertPiece(2, 1)
+newboard.InsertPiece(2, 1)
+newboard.InsertPiece(2, 1)
+newboard.InsertPiece(2, 1)
+success = newboard.InsertPiece(2, 1)
+print(success)
 newboard.PrintBoard()
