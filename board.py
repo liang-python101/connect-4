@@ -28,7 +28,10 @@ class board:
             print(newline)
         print(horizontal)
         if showbase == True:
+            print(horizontal)
             print(base)
+        else:
+            print(horizontal)
 
     def InsertPiece(self, plr:int=1, col:int=0):
         success = False
