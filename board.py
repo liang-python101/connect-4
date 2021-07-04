@@ -12,6 +12,21 @@ class board:
         empty_space = '   '
         base = '╔╩╗                         ╔╩╗'
         #go through board and print correct things, if not empty space print player piece
+        num_rows, num_cols = self.matrix.shape
+        for row in range(0,num_rows):
+            newline = ' ' + vertical
+            for col in range(0,num_cols):
+                loc_status = self.matrix[row][col]
+                if loc_status == 0:
+                    newline += empty_space
+                elif loc_status == 1:
+                    newline = newline + ' ' + self.plr1p + ' '
+                elif loc_status == 2:
+                    newline = newline + ' ' + self.plr2p + ' '
+                newline += vertical
+            print(horizontal)
+            print(newline)
+        print(horizontal)
         if showbase == True:
             print(base)
 

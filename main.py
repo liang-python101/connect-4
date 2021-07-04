@@ -1,5 +1,7 @@
 import numpy as np
+from board import board
 
+"""
 print(" ═════════════════════════════")
 print(" ║ O ║ X ║ O ║ X ║ O ║ X ║ O ║")
 print(" ═════════════════════════════")
@@ -14,7 +16,7 @@ print(" ════════════════════════
 print(" ║ X ║ O ║ X ║ X ║ O ║ O ║ O ║")
 print(" ═════════════════════════════")
 print("╔╩╗                         ╔╩╗")
+"""
 
-matrix = np.zeros((6,7))
-print(matrix)
-matrix[0][0] = "AA"
+newboard = board()
+newboard.PrintBoard()
